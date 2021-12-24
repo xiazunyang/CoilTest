@@ -13,6 +13,7 @@ object Http {
             .readTimeout(16, TimeUnit.SECONDS)
             .writeTimeout(16, TimeUnit.SECONDS)
             .connectTimeout(8, TimeUnit.SECONDS)
+            .addInterceptor(CoilProgressInterceptor())
             .addInterceptor(ProgressInterceptor())
             .addInterceptor(TextLogInterceptor().setLevel(LogLevel.BODY))
             .build()

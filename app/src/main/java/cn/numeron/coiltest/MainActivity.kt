@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
             diskCachePolicy(CachePolicy.DISABLED)
             memoryCachePolicy(CachePolicy.DISABLED)
             setParameter("DlProgressCallback", DlProgressCallback {
-                val percentOfProgress = (it * 100).toInt()
+                val percent = (it * 100).toInt()
                 runOnUiThread {
-                    textView.text = String.format("%d%%", percentOfProgress)
+                    textView.text = String.format("%d%%", percent)
                 }
             })
         }
